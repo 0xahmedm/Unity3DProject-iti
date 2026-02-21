@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public class ICollectable
+public interface ICollectable
 {
-    
+    void OnCollect()
+    {
+        // Implement collection logic here
+    }
+
 }
