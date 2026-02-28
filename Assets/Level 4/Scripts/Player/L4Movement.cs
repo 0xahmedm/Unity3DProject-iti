@@ -9,8 +9,17 @@ public class L4Movement : MonoBehaviour
 
     private CharacterController controller;
     private Vector3 velocity;
+    public Vector3 CurrentMoveInput { get; private set; }
 
-    public Vector3 CurrentMoveInput { get; private set; } 
+    [Header("Audio")]
+    private float timer;
+    [SerializeField] private float intervalBetweenFootsteps = 0.5f;
+    [SerializeField] private Transform footStepPos;
+    [SerializeField] private Vector2 minMaxPitch = new Vector2(0.8f, 1.2f);
+
+    [SerializeField] private AudioClip footStepSound;
+
+
 
     void Start()
     {
@@ -23,17 +32,33 @@ public class L4Movement : MonoBehaviour
     void Update()
     {
         HandleMovement();
+        
     }
-
-    void HandleMovement()
+    private Vector3 MovementDir()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+        return move; 
+    }
+
+    void HandleMovement()
+    {
+        Vector3 move = MovementDir();
+        if (move.magnitude > 0)
+        {
+            timer += Time.deltaTime;
+            if (timer >= intervalBetweenFootsteps)
+            {
+                timer = 0;
+                AudioManager.Instance.PlayClipAtPosition(footStepSound, footStepPos.position, 1, minMaxPitch.x, minMaxPitch.y);
+            }
+        }
         CurrentMoveInput = move;
 
         controller.Move(move * moveSpeed * Time.deltaTime);
+
 
         if (controller.isGrounded && velocity.y < 0)
             velocity.y = -2f;

@@ -26,8 +26,8 @@ TagManager:
   - 
   - L4Interactable
   - L4Collectable
-  - 
-  - 
+  - PuzzleColliders
+  - L4FlameCollider
   - 
   - 
   - 

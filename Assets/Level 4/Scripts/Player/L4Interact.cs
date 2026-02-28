@@ -15,7 +15,9 @@ public class L4Interact : MonoBehaviour
 
     [SerializeField] private IHoldable currentHoldable;
     [SerializeField] private Rigidbody HoldableRb;
+    [SerializeField] private AudioClip holdSound;
     private bool isHolding;
+    [SerializeField] private float interactVolume=2f;
 
     public float ThrowingForce = 10f;
 
@@ -82,10 +84,16 @@ public class L4Interact : MonoBehaviour
             IHoldable holdable = hit.collider.GetComponent<IHoldable>();
             if (holdable != null)
             {
+
+                if(hit.collider.GetComponent<Rigidbody>() == null)
+                {
+                   hit.collider.gameObject.AddComponent<Rigidbody>();
+                }
                 currentHoldable = holdable;
                 isHolding = true;
                 HoldableRb= hit.collider.GetComponent<Rigidbody>();
                 HoldPoint.connectedBody = HoldableRb;
+                AudioManager.Instance.PlaySound(holdSound, interactVolume);
             }
         }
     }

@@ -1,24 +1,22 @@
 using UnityEngine;
 
-public class PuzzlePiece : MonoBehaviour,IPuzzlePiece,ICollectable,IInteractable
+public class PuzzlePiece : MonoBehaviour,
+    IPuzzlePiece, ICollectable, IInteractable, IHoldable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string pieceID;
+    [SerializeField] private string interactionText;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string PieceID => pieceID;
+
     public void Interact()
     {
-
+        Debug.Log("Interacted with " + interactionText);
     }
-    public void OnCollect()
-    {
 
+    public void OnCollect() { }
+
+    public void OnPuzzlePiecePlaced()
+    {
+        Debug.Log($"{pieceID} placed correctly!");
     }
 }
