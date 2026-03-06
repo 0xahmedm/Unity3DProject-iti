@@ -5954,18 +5954,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyOrbs
       objectReference: {fileID: 0}
-    - target: {fileID: 5108778561223139811, guid: 298a95646b8742b44acca34cff6167d7, type: 3}
-      propertyPath: m_Radius
-      value: 1.4174986
-      objectReference: {fileID: 0}
-    - target: {fileID: 5108778561223139811, guid: 298a95646b8742b44acca34cff6167d7, type: 3}
-      propertyPath: m_Center.y
-      value: 0.66999984
-      objectReference: {fileID: 0}
-    - target: {fileID: 5108778561223139811, guid: 298a95646b8742b44acca34cff6167d7, type: 3}
-      propertyPath: m_Center.z
-      value: -1.7179956
-      objectReference: {fileID: 0}
     - target: {fileID: 6461034620406010241, guid: 298a95646b8742b44acca34cff6167d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 89.02
@@ -5976,7 +5964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6461034620406010241, guid: 298a95646b8742b44acca34cff6167d7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.52000237
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 6461034620406010241, guid: 298a95646b8742b44acca34cff6167d7, type: 3}
       propertyPath: m_LocalRotation.w
