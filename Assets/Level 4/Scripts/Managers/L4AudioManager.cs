@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class L4AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
+    public static L4AudioManager Instance { get; private set; }
 
     [Header("Audio Source Pools")]
     [SerializeField] private int sfxPoolSize = 10;

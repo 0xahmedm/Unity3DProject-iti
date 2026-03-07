@@ -32,7 +32,7 @@ public class L4Movement : MonoBehaviour
     void Update()
     {
         HandleMovement();
-        
+
     }
     private Vector3 MovementDir()
     {
@@ -40,7 +40,7 @@ public class L4Movement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-        return move; 
+        return move;
     }
 
     void HandleMovement()
@@ -52,7 +52,7 @@ public class L4Movement : MonoBehaviour
             if (timer >= intervalBetweenFootsteps)
             {
                 timer = 0;
-                AudioManager.Instance.PlayClipAtPosition(footStepSound, footStepPos.position, 1, minMaxPitch.x, minMaxPitch.y);
+                L4AudioManager.Instance.PlayClipAtPosition(footStepSound, footStepPos.position, 1, minMaxPitch.x, minMaxPitch.y);
             }
         }
         CurrentMoveInput = move;

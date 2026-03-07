@@ -7,7 +7,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Source Pools")]
     [SerializeField] private int sfxPoolSize = 10;
-    
+
     private AudioSource musicSource;
     private List<AudioSource> sfxPool;
     private Dictionary<string, AudioSource> loopingSounds;
@@ -107,6 +107,7 @@ public class AudioManager : MonoBehaviour
         if (loopingSounds.ContainsKey(id))
         {
             AudioSource source = loopingSounds[id];
+            if (!source) return;
             source.Stop();
             source.loop = false;
             source.clip = null;
@@ -127,9 +128,11 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void UpdateLoopingSound(string id, float? volume = null, float? pitch = null)
     {
+
         if (loopingSounds.ContainsKey(id))
         {
             AudioSource source = loopingSounds[id];
+            if (!source) return;
             if (volume.HasValue)
                 source.volume = volume.Value * sfxVolume * masterVolume;
             if (pitch.HasValue)
@@ -277,7 +280,7 @@ public class AudioManager : MonoBehaviour
     {
         if (musicSource != null)
             musicSource.volume = musicVolume * masterVolume;
-        
+
         UpdateLoopingSoundsVolume();
     }
 
@@ -331,7 +334,7 @@ public class AudioManager : MonoBehaviour
             }
         }
 
-        
+
         return sfxPool[0];
     }
     #endregion

@@ -14,7 +14,7 @@ public class L4AmbientSoundsScript : MonoBehaviour
         {
             audio = AmbientSounds[i];
             position = SoundPositions[i];
-            AudioManager.Instance.PlayLoopingSoundAtPosition(audio.name, audio,position.position ,1, 1);
+            L4AudioManager.Instance.PlayLoopingSoundAtPosition(audio.name, audio,position.position ,1, 1);
         }
     }
 
