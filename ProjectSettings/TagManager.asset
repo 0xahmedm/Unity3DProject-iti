@@ -34,9 +34,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - CAR
+  - Delivery
+  - Wheels
   m_SortingLayers:
   - name: Default
     uniqueID: 0
