@@ -27,7 +27,7 @@ public class L1PlayerHealth : MonoBehaviour
             StartCoroutine(SpawnProtection());
     }
 
-    IEnumerator SpawnProtection()
+    public IEnumerator SpawnProtection()
     {
         isInvincible = true;
         Debug.Log("Spawn protection active");

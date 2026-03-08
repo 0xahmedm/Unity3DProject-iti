@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class L1SafeDistanceSystem : MonoBehaviour
 {
@@ -7,69 +8,89 @@ public class L1SafeDistanceSystem : MonoBehaviour
     public L1PlayerMovement movement;
     public Animator playerAnimator;
     public L1EnemyChase enemy;
+    public L1PlayerHealth playerHealth;
 
     [Header("Distance")]
-    public float safeDistance=500f;
-    public float distanceMultiplier=0.1f;
+    public float safeDistance = 500f;
+    public float distanceMultiplier = 0.1f;
 
     [Header("Spawn")]
     public GameObject robotPrefab;
     public GameObject portalPrefab;
 
-    public Vector3 robotOffset=new Vector3(15f,0f,-39.5f);
-    public Vector3 portalOffset=new Vector3(30f,0f,-39.5f);
+    public Vector3 robotOffset = new Vector3(-20f, 0f, 0f);
+    public Vector3 portalOffset = new Vector3(-35f, 4f, 0f);
+
+    [Header("Timing")]
+    public float celebrationTime = 3f;
 
     private bool completed;
 
     void Update()
     {
-        if(completed)
+        if (completed)
             return;
 
-        float distance=(player.position.x+300f)*distanceMultiplier;
+        float distance = (player.position.x + 300f) * distanceMultiplier;
 
-        if(distance>=safeDistance)
+        if (distance >= safeDistance)
         {
-            CompleteLevel();
+            StartCoroutine(LevelCompleteSequence());
         }
     }
 
-    void CompleteLevel()
+    IEnumerator LevelCompleteSequence()
     {
-        completed=true;
-
-        if(movement!=null)
-            movement.stopMoving=true;
-
-        if(playerAnimator!=null)
-            playerAnimator.SetFloat("Speed",0);
-
-        if(enemy!=null)
-            enemy.stopChasing=true;
-
+        completed = true;
         SpawnRobot();
         SpawnPortal();
 
-        Debug.Log("LEVEL COMPLETE");
+        // Trigger spawn protection when portal appears
+        if (playerHealth != null)
+        {
+            playerHealth.spawnProtectionDuration=9;
+            StartCoroutine(playerHealth.SpawnProtection());
+        }
+        if (movement != null)
+            movement.stopMoving = true;
+
+        if (enemy != null)
+            enemy.stopChasing = true;
+
+        if (playerAnimator != null)
+            playerAnimator.SetTrigger("Idle");
+
+        yield return new WaitForSeconds(celebrationTime);
+
+        if (movement != null)
+            movement.stopMoving = false;
     }
 
     void SpawnRobot()
     {
-        if(robotPrefab==null)
-            return;
+        if (robotPrefab == null) return;
 
-        Vector3 pos=player.position+robotOffset;
+        Vector3 pos = new Vector3(
+            player.position.x + robotOffset.x,
+            player.position.y + robotOffset.y,
+            -29f
+        );
 
-        Instantiate(robotPrefab,pos,Quaternion.identity);
+        Instantiate(robotPrefab, pos, Quaternion.Euler(-90f, -90f, 0f));
     }
 
     void SpawnPortal()
     {
-        if(portalPrefab==null)
-            return;
+        if (portalPrefab == null) return;
 
-        Vector3 pos=player.position+portalOffset;
+        float middleLaneZ = movement != null ? movement.middleLaneZ : player.position.z;
 
-        Instantiate(portalPrefab,pos,Quaternion.identity);
+        Vector3 pos = new Vector3(
+            player.position.x + portalOffset.x,
+            player.position.y + portalOffset.y,
+            middleLaneZ
+        );
+
+        Instantiate(portalPrefab, pos, Quaternion.Euler(0f, 90f, 0f));
     }
 }
