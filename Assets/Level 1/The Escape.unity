@@ -2698,7 +2698,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 952426121}
   enemy: {fileID: 1973492304}
   playerHealth: {fileID: 952426115}
-  safeDistance: 2
+  safeDistance: 500
   distanceMultiplier: 0.1
   robotPrefab: {fileID: 315774946382549075, guid: 8b6ed2aff4130d5478eca3fb3a468e50, type: 3}
   portalPrefab: {fileID: 3451242158564458464, guid: 073135694dceaaf4bb65d2fda469cd9c, type: 3}
