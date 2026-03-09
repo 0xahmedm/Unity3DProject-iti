@@ -14968,7 +14968,7 @@ GameObject:
   - component: {fileID: 720542356}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15128,7 +15128,7 @@ MonoBehaviour:
   interactDistance: 3
   interactLayer:
     serializedVersion: 2
-    m_Bits: 524288
+    m_Bits: 0
   playerCamera: {fileID: 719493873}
   holdThreshold: 0.4
   HoldPoint: {fileID: 2103313117}
