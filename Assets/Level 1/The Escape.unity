@@ -2904,7 +2904,7 @@ MonoBehaviour:
   startSpeed: 29
   maxSpeed: 34
   acceleration: 0.2
-  catchDistance: 1
+  catchDistance: 2.1
   laneSwitchSpeed: 2
   leftLaneZ: -24
   middleLaneZ: -39.5
