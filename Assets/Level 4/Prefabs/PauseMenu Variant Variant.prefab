@@ -88,9 +88,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4168816393740270074, guid: 63594b260c7eee94eae566c1d29655b8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5948678641276502758, guid: 63594b260c7eee94eae566c1d29655b8, type: 3}
       propertyPath: m_Name
       value: PauseMenu Variant Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7453295743623928046, guid: 63594b260c7eee94eae566c1d29655b8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

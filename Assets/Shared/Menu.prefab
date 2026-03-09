@@ -982,7 +982,6 @@ GameObject:
   - component: {fileID: 6793634297002884457}
   - component: {fileID: 3539912020114511187}
   - component: {fileID: 9159059620726669709}
-  - component: {fileID: 8197531455128460555}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1058,23 +1057,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &8197531455128460555
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5331372410510338308}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 140d4a9d781ec404a9bced6f458c41c0, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 140d4a9d781ec404a9bced6f458c41c0, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &5742180699152566848
 GameObject:
   m_ObjectHideFlags: 0
