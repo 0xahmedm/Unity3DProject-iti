@@ -34,6 +34,8 @@ public AudioClip Background;
         Time.timeScale = 1f;
         AudioManager.Instance.StopAllAudio();
         AudioManager.Instance.PlayLoopingSound("BackgroundID",Background,0.3f);
+        Cursor.visible=false;
+        Cursor.lockState=CursorLockMode.Locked;
         if (gameOverPanel)
             gameOverPanel.SetActive(false);
     }
@@ -63,6 +65,8 @@ public AudioClip Background;
 
         if (gameOverPanel){
             gameOverPanel.SetActive(true);
+            Cursor.visible=true;
+            Cursor.lockState=CursorLockMode.None;
             AudioManager.Instance.StopLoopingSound("TauntID");
             AudioManager.Instance.PlaySound(lose,1);
         }
@@ -101,16 +105,16 @@ public AudioClip Background;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenue");
     }
-    public void RestartFromBeginning()
-    {
-        PlayerPrefs.DeleteKey("CheckpointX");
-        PlayerPrefs.DeleteKey("Coins");
-        PlayerPrefs.DeleteKey("Toys");
-        PlayerPrefs.Save();
+    // public void RestartFromBeginning()
+    // {
+    //     PlayerPrefs.DeleteKey("CheckpointX");
+    //     PlayerPrefs.DeleteKey("Coins");
+    //     PlayerPrefs.DeleteKey("Toys");
+    //     PlayerPrefs.Save();
 
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    //     Time.timeScale = 1f;
+    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    // }
 
     public void Quit()
     {

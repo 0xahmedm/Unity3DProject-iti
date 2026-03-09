@@ -74,13 +74,7 @@ public class L1SafeDistanceSystem : MonoBehaviour
     void SpawnRobot()
     {
         if (robotPrefab == null) return;
-
-        Vector3 pos = new Vector3(
-            player.position.x + robotOffset.x,
-            player.position.y + robotOffset.y,
-            -29f
-        );
-
+        Vector3 pos = new Vector3(player.position.x + robotOffset.x,player.position.y + robotOffset.y,-29f);
         Instantiate(robotPrefab, pos, Quaternion.Euler(-90f, -90f, 0f));
     }
 
@@ -90,11 +84,7 @@ public class L1SafeDistanceSystem : MonoBehaviour
 
         float middleLaneZ = movement != null ? movement.middleLaneZ : player.position.z;
 
-        Vector3 pos = new Vector3(
-            player.position.x + portalOffset.x,
-            player.position.y + portalOffset.y,
-            middleLaneZ
-        );
+        Vector3 pos = new Vector3(player.position.x + portalOffset.x,player.position.y + portalOffset.y,middleLaneZ);
 
         Instantiate(portalPrefab, pos, Quaternion.Euler(0f, 90f, 0f));
     }
