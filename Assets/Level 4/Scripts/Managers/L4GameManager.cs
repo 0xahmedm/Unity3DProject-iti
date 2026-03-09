@@ -6,6 +6,8 @@ public class L4GameManager : MonoBehaviour
     [SerializeField] private int totalPuzzlesRequired = 3;
     [SerializeField] private AudioClip winSound;
     [SerializeField] private float volume = 1;
+    public GameObject Portal;
+    public GameObject Robot;
 
     private int puzzlesSolved = 0;
 
@@ -32,6 +34,9 @@ public class L4GameManager : MonoBehaviour
         if (puzzlesSolved >= totalPuzzlesRequired)
         {
             Debug.Log("All puzzles completed! You win!");
+            Robot.SetActive(true);
+            Portal.SetActive(true);
+
             // Trigger end-game logic here
             if (winSound != null)
             {
