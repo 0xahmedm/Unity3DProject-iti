@@ -21,17 +21,17 @@ public class L4Movement : MonoBehaviour
 
 
 
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     void Update()
     {
         HandleMovement();
-
     }
     private Vector3 MovementDir()
     {
