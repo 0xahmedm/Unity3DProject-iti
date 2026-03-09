@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Global/MainMenue.unity
+    path: Assets/Shared/MainMenue.unity
     guid: 8e649cf17a91d7b45a94784c7231d8db
   - enabled: 1
     path: Assets/Level 1/The Escape.unity
