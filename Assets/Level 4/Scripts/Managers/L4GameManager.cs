@@ -4,6 +4,8 @@ public class L4GameManager : MonoBehaviour
 {
     [SerializeField] private PuzzleSolvedEvent puzzleSolvedEvent;
     [SerializeField] private int totalPuzzlesRequired = 3;
+    [SerializeField] private AudioClip winSound;
+    [SerializeField] private float volume = 1;
 
     private int puzzlesSolved = 0;
 
@@ -31,6 +33,10 @@ public class L4GameManager : MonoBehaviour
         {
             Debug.Log("All puzzles completed! You win!");
             // Trigger end-game logic here
+            if (winSound != null)
+            {
+                L4AudioManager.Instance.PlaySound(winSound, 1);
+            }
         }
     }
 }

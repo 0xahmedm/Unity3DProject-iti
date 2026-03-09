@@ -93,7 +93,7 @@ public class L4Interact : MonoBehaviour
                 isHolding = true;
                 HoldableRb= hit.collider.GetComponent<Rigidbody>();
                 HoldPoint.connectedBody = HoldableRb;
-                AudioManager.Instance.PlaySound(holdSound, interactVolume);
+                L4AudioManager.Instance.PlaySound(holdSound, interactVolume);
             }
         }
     }

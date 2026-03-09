@@ -36,7 +36,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (puzzleSolvedSound != null)
         {
-            AudioManager.Instance.PlaySound(puzzleSolvedSound, 1);
+            L4AudioManager.Instance.PlaySound(puzzleSolvedSound, 1);
         }
 
         if (slotsFilled >= slots.Count)
