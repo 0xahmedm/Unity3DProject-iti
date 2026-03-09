@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Global/MainMenue.unity
+    guid: 8e649cf17a91d7b45a94784c7231d8db
   - enabled: 1
     path: Assets/Level 1/The Escape.unity
     guid: 2ac8d976573cc4b49bd391f354189f10
@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Level 2/The Hunt.unity
     guid: 289839b21849153428b95fc58a055f0d
   - enabled: 1
-    path: Assets/Level 3/Scenes/test.unity
+    path: Assets/Level 3/Scenes/Delivery.unity
     guid: 3c97236f95faaf8429bb61dc317f4a5a
   - enabled: 1
-    path: Assets/Level 4/Scenes/The Memory Walk.unity
+    path: Assets/Level 4/The Memory Walk.unity
     guid: 0894dceb6278e3f4c80a80ce904f33ed
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
