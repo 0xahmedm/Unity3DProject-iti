@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
   portal: {fileID: 7753926328967054357, guid: 073135694dceaaf4bb65d2fda469cd9c, type: 3}
   currentLevel: The Escape
-  nextScene: test
+  nextScene: Delivery
 --- !u!1 &1570729501
 GameObject:
   m_ObjectHideFlags: 0
