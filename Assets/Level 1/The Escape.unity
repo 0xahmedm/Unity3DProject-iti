@@ -2668,7 +2668,7 @@ MonoBehaviour:
   - {fileID: 2383517423833017396, guid: cbacea909680b2f46b07bdb45ab5bfbf, type: 3}
   segmentsOnScreen: 4
   segmentLength: 500
-  useCheckpoint: 0
+  useCheckpoint: 1
 --- !u!4 &1556454828
 Transform:
   m_ObjectHideFlags: 0
@@ -2749,7 +2749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::L1Checkpoint
   saveCoins: 1
-  saveDistance: 0
+  saveDistance: 1
 --- !u!114 &1556454835
 MonoBehaviour:
   m_ObjectHideFlags: 0
