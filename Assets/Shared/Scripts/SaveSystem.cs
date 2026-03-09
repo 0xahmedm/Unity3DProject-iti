@@ -20,6 +20,6 @@ public static class SaveSystem
 
     public static string GetCheckpoint()
     {
-        return PlayerPrefs.GetString("LastScene","Level1");
+        return PlayerPrefs.GetString("LastScene","The Escape");
     }
 }

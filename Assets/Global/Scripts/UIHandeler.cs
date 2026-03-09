@@ -38,6 +38,7 @@ public class UIHandeler : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible=true;
 
         HandelUIChange();
         startButton.onClick.AddListener(StartGame);
@@ -54,10 +55,16 @@ public class UIHandeler : MonoBehaviour
 
         exitButton.onClick.AddListener(() => Application.Quit());
     }
-
+    
     private void StartGame()
     {
-        SceneManager.LoadScene("Day2Side");
+        
+        string check=PlayerPrefs.GetString("LastScene","The Escape");
+        if(check=="MainMenue")
+            check="The Escape";            
+        SceneManager.LoadScene(check);
+
+        
     }
     private void ChangeMenu(CurrentMenu menu)
     {
@@ -68,6 +75,7 @@ public class UIHandeler : MonoBehaviour
 
     private void HandelUIChange()
     {
+        Cursor.visible=true;
         switch (currentMenu)
         {
             case CurrentMenu.MainMenu:

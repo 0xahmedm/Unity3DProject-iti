@@ -12298,7 +12298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
   portal: {fileID: 1692462305}
   currentLevel: The Memory Walk
-  nextScene: The Escape
+  nextScene: MainMenue
 --- !u!1001 &381165734
 PrefabInstance:
   m_ObjectHideFlags: 0

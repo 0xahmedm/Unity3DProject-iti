@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7670364822969639372}
   - component: {fileID: 662135679414531786}
   - component: {fileID: 1364631091326646444}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: Taxi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,5 +161,5 @@ MonoBehaviour:
   detectionRange: 8
   vehicleLayer:
     serializedVersion: 2
-    m_Bits: 536870912
+    m_Bits: 1024
   currentWaypoint: {fileID: 0}

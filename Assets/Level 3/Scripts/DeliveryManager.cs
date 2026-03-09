@@ -21,6 +21,9 @@ public class DeliveryManager : MonoBehaviour
     [Header("Marker")]
     [SerializeField] private FaceTarget marker; 
     [SerializeField] private Transform baseTransform;
+    [SerializeField] private GameObject Portal;
+    [SerializeField] private GameObject Robot;
+
 
 
 
@@ -96,10 +99,11 @@ public class DeliveryManager : MonoBehaviour
     private void UpdateScore(int amount)
     {
         score += amount;
-        if (score <= 1000)
+        if (score >= 400)
         {
             OnWin?.Invoke();
-            Debug.Log("You win!");
+            Portal.SetActive(true);
+            Robot.SetActive(true);
         }
         UpdateUI();
     }

@@ -234,7 +234,7 @@ public class CarController : MonoBehaviour
         }
     }
 
-    public bool IsBraking() => Input.GetKey(KeyCode.Space) && !isCollisionStunned;
+    public bool IsBraking() =>Input.GetKey(KeyCode.Space) && !isCollisionStunned;
 
     private void HandleTireSmoke(bool active)
     {

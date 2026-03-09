@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4304924168611910996}
   - component: {fileID: 9011129984520609358}
   - component: {fileID: 1333565843860455904}
-  m_Layer: 29
+  m_Layer: 10
   m_Name: Car_2_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,5 +161,5 @@ MonoBehaviour:
   detectionRange: 8
   vehicleLayer:
     serializedVersion: 2
-    m_Bits: 536870912
+    m_Bits: 1024
   currentWaypoint: {fileID: 0}

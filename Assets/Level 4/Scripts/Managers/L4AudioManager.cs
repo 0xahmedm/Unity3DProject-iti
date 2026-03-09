@@ -22,7 +22,6 @@ public class L4AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
             Initialize();
         }
         else

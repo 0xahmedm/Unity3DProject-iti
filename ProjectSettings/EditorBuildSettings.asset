@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Level 3/Scenes/Delivery.unity
     guid: 3c97236f95faaf8429bb61dc317f4a5a
   - enabled: 1
-    path: Assets/Level 4/The Memory Walk.unity
+    path: Assets/Level 4/Scenes/The Memory Walk.unity
     guid: 0894dceb6278e3f4c80a80ce904f33ed
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}

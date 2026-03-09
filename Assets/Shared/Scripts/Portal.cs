@@ -11,7 +11,7 @@ public class Portal : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SaveSystem.MarkLevelComplete(currentLevel);
-            SaveSystem.SetCheckpoint(currentLevel);
+            SaveSystem.SetCheckpoint(nextScene);
             SceneManager.LoadScene(nextScene);
         }
     }

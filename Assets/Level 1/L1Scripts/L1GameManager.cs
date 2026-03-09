@@ -33,7 +33,7 @@ public AudioClip Background;
         gameOver = false;
         Time.timeScale = 1f;
         AudioManager.Instance.StopAllAudio();
-        AudioManager.Instance.PlayLoopingSound("BackgroundID",Background,0.6f);
+        AudioManager.Instance.PlayLoopingSound("BackgroundID",Background,0.3f);
         if (gameOverPanel)
             gameOverPanel.SetActive(false);
     }
@@ -96,7 +96,11 @@ public AudioClip Background;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
+        public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenue");
+    }
     public void RestartFromBeginning()
     {
         PlayerPrefs.DeleteKey("CheckpointX");
