@@ -11741,7 +11741,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298216839}
-  - component: {fileID: 298216840}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -11764,20 +11763,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &298216840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298216838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d64d874408a6ad4aa82da0f40ee6ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Portal
-  currentLevel: 
-  nextScene: 
 --- !u!1001 &302725138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12256,7 +12241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 376112912}
   - component: {fileID: 376112913}
-  - component: {fileID: 376112914}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -12296,21 +12280,6 @@ MonoBehaviour:
   totalPuzzlesRequired: 3
   winSound: {fileID: 8300000, guid: dce97a5f13b66b843b8b9fa4c5e6fc17, type: 3}
   volume: 1
---- !u!114 &376112914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376112911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 940016521a3cdc643bd158cf1dc2699f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
-  portal: {fileID: 298216840}
-  currentLevel: The Memory Walk
-  nextScene: Main Menu
 --- !u!1001 &381165734
 PrefabInstance:
   m_ObjectHideFlags: 0
