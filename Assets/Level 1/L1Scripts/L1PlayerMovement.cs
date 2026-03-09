@@ -47,7 +47,7 @@ public class L1PlayerMovement : MonoBehaviour
 
             controller.enabled = true;
 
-            Debug.Log("Player spawned at checkpoint X: " + savedX);
+            //Debug.Log("Player spawned at checkpoint X: " + savedX);
         }
     }
 
@@ -71,7 +71,7 @@ public class L1PlayerMovement : MonoBehaviour
             PlayerPrefs.SetFloat("CheckpointX", transform.position.x);
             PlayerPrefs.Save();
             autoSaveTimer = autoSaveInterval;
-            Debug.Log("Auto saved at X: " + transform.position.x);
+            //Debug.Log("Auto saved at X: " + transform.position.x);
         }
     }
 
@@ -129,20 +129,13 @@ public class L1PlayerMovement : MonoBehaviour
         float moveX = stopMoving ? 0 : forwardSpeed;
         float difference = targetZ - transform.position.z;
         float moveZ = difference * laneSwitchSpeed;
-
-        Vector3 move = new Vector3(
-            moveX,
-            verticalVelocity,
-            moveZ
-        );
-
+        Vector3 move = new Vector3(moveX,verticalVelocity,moveZ);
         controller.Move(move * Time.deltaTime);
     }
 
     void UpdateAnimator()
     {
         if (!animator) return;
-
         animator.SetFloat("Speed", forwardSpeed);
         animator.SetBool("Grounded", controller.isGrounded);
     }

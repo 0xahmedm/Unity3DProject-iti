@@ -9,8 +9,7 @@ public class L1EnergyOrb : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            L1SpeedBoost boost =
-                other.GetComponent<L1SpeedBoost>();
+            L1SpeedBoost boost = other.GetComponent<L1SpeedBoost>();
 
             if (boost != null)
                 boost.ActivateBoost(duration, speedBoost);

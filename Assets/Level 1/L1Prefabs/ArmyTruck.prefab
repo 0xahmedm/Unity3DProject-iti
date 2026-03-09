@@ -288,6 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2d2e25e33eceb4895b930e26144a20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::L1Toy
+  ToyPickup: {fileID: 8300000, guid: 4ae9fea16a283be499fe88d7877c9998, type: 3}
   value: 1
 --- !u!114 &1204133279686080094
 MonoBehaviour:

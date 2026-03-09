@@ -12,7 +12,7 @@ public class L1SpeedBoost : MonoBehaviour
     private bool active;
     public RawImage energy;
     public Slider slider;
-
+public AudioClip EnergySound;
     void Start()
     {
         movement = GetComponent<L1PlayerMovement>();
@@ -29,6 +29,7 @@ public class L1SpeedBoost : MonoBehaviour
         energy.gameObject.SetActive(true);
         slider.gameObject.SetActive(true);
 
+
         slider.value =Mathf.Lerp(slider.value,timer,10);
 
         if (timer <= 0)
@@ -42,6 +43,7 @@ public class L1SpeedBoost : MonoBehaviour
 
     public void ActivateBoost(float duration,float boostAmount)
     {
+        AudioManager.Instance.PlaySound(EnergySound,1);
         movement.forwardSpeed =originalSpeed + boostAmount;
         timer = duration;
         active = true;

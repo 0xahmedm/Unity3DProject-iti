@@ -10,8 +10,8 @@ public class L1PlayerHealth : MonoBehaviour
 
     [Header("Spawn Protection")]
     public float spawnProtectionDuration = 3f;
+    public AudioClip Collide;
     private bool isInvincible;
-
     private Animator animator;
     private L1PlayerMovement movement;
     public bool isDead = false;
@@ -30,10 +30,10 @@ public class L1PlayerHealth : MonoBehaviour
     public IEnumerator SpawnProtection()
     {
         isInvincible = true;
-        Debug.Log("Spawn protection active");
+        // Debug.Log("Spawn protection active");
         yield return new WaitForSeconds(spawnProtectionDuration);
         isInvincible = false;
-        Debug.Log("Spawn protection ended");
+        // Debug.Log("Spawn protection ended");
     }
 
     public void TakeDamage(int amount)
@@ -57,6 +57,7 @@ public class L1PlayerHealth : MonoBehaviour
     void Stumble()
     {
         animator.SetTrigger("Stumble");
+        AudioManager.Instance.PlaySound(Collide,1);
         movement.enabled = false;
         Invoke(nameof(Recover), 0.2f);
     }
@@ -71,6 +72,8 @@ public class L1PlayerHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("Dead", true);
+        AudioManager.Instance.PlaySound(Collide,1);
+        AudioManager.Instance.StopLoopingSound("BackgroundID");
         movement.enabled = false;
         GetComponent<CharacterController>().enabled = false;
         yield return new WaitForSeconds(3f);

@@ -22,11 +22,10 @@ public class L1EnemyChase : MonoBehaviour
     public float spawnOffsetX = -20f;
 
     [Header("Sounds")]
-    public AudioSource runLoop;
-    public AudioSource tauntSound;
-
+    public AudioClip tauntSound;
+    public string tauntSoundId;
     public bool stopChasing;
-
+   
     private float currentSpeed;
     private float targetZ;
     private Animator animator;
@@ -50,8 +49,7 @@ public class L1EnemyChase : MonoBehaviour
 
         transform.position = pos;
 
-        if (runLoop != null)
-            runLoop.Play();
+
     }
 
     void Update()
@@ -110,13 +108,7 @@ public class L1EnemyChase : MonoBehaviour
 
             animator.SetBool("IsRunning", false);
             animator.SetTrigger("Taunt");
-
-            if (runLoop != null)
-                runLoop.Stop();
-
-            if (tauntSound != null)
-                tauntSound.Play();
-
+            AudioManager.Instance.PlayLoopingSound("TauntID",tauntSound,1);
             if (playerHealth != null && !playerHealth.isDead)
                 playerHealth.TakeDamage(playerHealth.currentHealth);
         }

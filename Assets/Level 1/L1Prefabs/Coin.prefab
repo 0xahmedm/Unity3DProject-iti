@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::L1Coin
   value: 1
+  CoinSound: {fileID: 8300000, guid: d36cd2f0d3070264cbf58c29337068a3, type: 3}
+  sfxVolume: 1
 --- !u!114 &-6364949377028394539
 MonoBehaviour:
   m_ObjectHideFlags: 0

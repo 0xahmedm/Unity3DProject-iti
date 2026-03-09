@@ -17,12 +17,12 @@ public class L1SafeDistanceSystem : MonoBehaviour
     [Header("Spawn")]
     public GameObject robotPrefab;
     public GameObject portalPrefab;
-
+    public AudioClip Win;
     public Vector3 robotOffset = new Vector3(-20f, 0f, 0f);
     public Vector3 portalOffset = new Vector3(-35f, 4f, 0f);
 
     [Header("Timing")]
-    public float celebrationTime = 3f;
+    public float WaitingTime = 3f;
 
     private bool completed;
 
@@ -42,6 +42,8 @@ public class L1SafeDistanceSystem : MonoBehaviour
     IEnumerator LevelCompleteSequence()
     {
         completed = true;
+        AudioManager.Instance.StopLoopingSound("BackgroundID");
+        AudioManager.Instance.PlaySound(Win,1);
         SpawnRobot();
         SpawnPortal();
 
@@ -60,7 +62,7 @@ public class L1SafeDistanceSystem : MonoBehaviour
         if (playerAnimator != null)
             playerAnimator.SetTrigger("Idle");
 
-        yield return new WaitForSeconds(celebrationTime);
+        yield return new WaitForSeconds(WaitingTime);
 
         if (movement != null)
             movement.stopMoving = false;

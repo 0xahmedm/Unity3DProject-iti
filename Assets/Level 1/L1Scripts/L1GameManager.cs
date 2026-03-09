@@ -10,7 +10,7 @@ public class L1GameManager : MonoBehaviour
     public Transform player;
     public L1PlayerHealth playerHealth;
     public L1Score scoreSystem;
-
+    public AudioClip lose;
     [Header("UI")]
     public GameObject gameOverPanel;
     public TextMeshProUGUI distanceText;
@@ -20,7 +20,7 @@ public class L1GameManager : MonoBehaviour
 
     [Header("Settings")]
     public float distanceMultiplier = 0.1f;
-
+public AudioClip Background;
     private bool gameOver;
 
     void Awake()
@@ -32,7 +32,8 @@ public class L1GameManager : MonoBehaviour
     {
         gameOver = false;
         Time.timeScale = 1f;
-
+        AudioManager.Instance.StopAllAudio();
+        AudioManager.Instance.PlayLoopingSound("BackgroundID",Background,1);
         if (gameOverPanel)
             gameOverPanel.SetActive(false);
     }
@@ -44,7 +45,7 @@ public class L1GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("Coins");
         PlayerPrefs.DeleteKey("Toys");
         PlayerPrefs.Save();
-        Debug.Log("Save data cleared on quit");
+        // Debug.Log("Save data cleared on quit");
     }
 
     public void GameOver()
@@ -60,8 +61,11 @@ public class L1GameManager : MonoBehaviour
 
         SaveHighScore(distance);
 
-        if (gameOverPanel)
+        if (gameOverPanel){
             gameOverPanel.SetActive(true);
+            AudioManager.Instance.StopLoopingSound("TauntID");
+            AudioManager.Instance.PlaySound(lose,1);
+        }
 
         if (distanceText)
             distanceText.text = "Distance: " + distance;

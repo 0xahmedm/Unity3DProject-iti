@@ -12,7 +12,7 @@ public class L1Checkpoint : MonoBehaviour
             if (saveDistance)
             {
                 PlayerPrefs.SetFloat("CheckpointX", other.transform.position.x);
-                Debug.Log("Checkpoint saved at X: " + other.transform.position.x);
+                // Debug.Log("Checkpoint saved at X: " + other.transform.position.x);
             }
 
             if (saveCoins)
@@ -25,7 +25,7 @@ public class L1Checkpoint : MonoBehaviour
 
             PlayerPrefs.Save();
 
-            Debug.Log("Checkpoint Saved");
+            //Debug.Log("Checkpoint Saved");
         }
     }
 }

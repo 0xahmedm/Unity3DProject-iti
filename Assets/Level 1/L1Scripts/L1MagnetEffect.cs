@@ -10,16 +10,19 @@ public class L1MagnetEffect : MonoBehaviour
     public float attractSpeed = 25f;
     public RawImage magnet;
     public Slider slider;
+    public AudioClip MagnetSound;
     private float timer;
 
     void Update()
     {
         if (!magnetActive) return;
 
+
         timer -= Time.deltaTime;
         magnet.gameObject.SetActive(true);
         slider.gameObject.SetActive(true);
         AttractCoins();
+
         slider.value =Mathf.Lerp(slider.value,timer,50);
 
         if (timer <= 0){
@@ -31,6 +34,7 @@ public class L1MagnetEffect : MonoBehaviour
 
     public void ActivateMagnet(float duration)
     {
+        AudioManager.Instance.PlaySound(MagnetSound,1);
         magnetActive = true;
         timer = duration;
         slider.maxValue=duration;

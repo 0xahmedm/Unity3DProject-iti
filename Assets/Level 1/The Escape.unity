@@ -1012,6 +1012,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8770407393213062382, guid: 727fc55778edafa46bc681d2c7817d92, type: 3}
+      propertyPath: m_Size.z
+      value: 4.903693
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770407393213062382, guid: 727fc55778edafa46bc681d2c7817d92, type: 3}
+      propertyPath: m_Center.x
+      value: 1.397205
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770407393213062382, guid: 727fc55778edafa46bc681d2c7817d92, type: 3}
+      propertyPath: m_Center.y
+      value: 0.11014858
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770407393213062382, guid: 727fc55778edafa46bc681d2c7817d92, type: 3}
+      propertyPath: m_Center.z
+      value: 1.0190971
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1512,6 +1528,7 @@ MonoBehaviour:
   currentHealth: 5
   fadeout: {fileID: 1020662758}
   spawnProtectionDuration: 3
+  Collide: {fileID: 8300000, guid: 184129458d0120443ba7dc4a31c97105, type: 3}
   isDead: 0
 --- !u!114 &952426116
 MonoBehaviour:
@@ -1574,6 +1591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::L1SpeedBoost
   energy: {fileID: 168660003}
   slider: {fileID: 1927694453}
+  EnergySound: {fileID: 8300000, guid: 59026c16f74a06d4d9093481a6803674, type: 3}
 --- !u!114 &952426119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1591,6 +1609,7 @@ MonoBehaviour:
   attractSpeed: 40
   magnet: {fileID: 924833352}
   slider: {fileID: 1570729503}
+  MagnetSound: {fileID: 8300000, guid: de69cac013e0e9942b15ed99330bd031, type: 3}
 --- !u!114 &952426120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,6 +2187,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207344556}
   m_CullTransparentMesh: 1
+--- !u!1 &1261815678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261815680}
+  - component: {fileID: 1261815679}
+  m_Layer: 0
+  m_Name: '---------Audio---------- '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1261815679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261815678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c1ffcebb3e93344bac3537c6aaff60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  sfxPoolSize: 10
+  masterVolume: 1
+  musicVolume: 0.6
+  sfxVolume: 1
+--- !u!4 &1261815680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261815678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -267.22205, y: -0.00002, z: -30.69127}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274050925
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2668,7 @@ MonoBehaviour:
   - {fileID: 2383517423833017396, guid: cbacea909680b2f46b07bdb45ab5bfbf, type: 3}
   segmentsOnScreen: 4
   segmentLength: 500
-  useCheckpoint: 1
+  useCheckpoint: 0
 --- !u!4 &1556454828
 Transform:
   m_ObjectHideFlags: 0
@@ -2661,12 +2728,14 @@ MonoBehaviour:
   player: {fileID: 952426114}
   playerHealth: {fileID: 952426115}
   scoreSystem: {fileID: 952426120}
+  lose: {fileID: 8300000, guid: 33175b11c03c36c43a96ebbd74e0fe41, type: 3}
   gameOverPanel: {fileID: 1020662758}
   distanceText: {fileID: 103412336}
   coinsText: {fileID: 1839880855}
   toysText: {fileID: 1831338969}
   highScoreText: {fileID: 1581407432}
   distanceMultiplier: 0.1
+  Background: {fileID: 8300000, guid: 1082cb6e364ee184a926c3def5fc8ad7, type: 3}
 --- !u!114 &1556454834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,7 +2749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::L1Checkpoint
   saveCoins: 1
-  saveDistance: 1
+  saveDistance: 0
 --- !u!114 &1556454835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2702,9 +2771,10 @@ MonoBehaviour:
   distanceMultiplier: 0.1
   robotPrefab: {fileID: 315774946382549075, guid: 8b6ed2aff4130d5478eca3fb3a468e50, type: 3}
   portalPrefab: {fileID: 3451242158564458464, guid: 073135694dceaaf4bb65d2fda469cd9c, type: 3}
+  Win: {fileID: 8300000, guid: e6a5ad0105761ef4da3dc4e5c4d4758a, type: 3}
   robotOffset: {x: 25, y: 0, z: -22}
   portalOffset: {x: 35, y: 4, z: -39.5}
-  celebrationTime: 6
+  WaitingTime: 6
 --- !u!114 &1556454836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4135,8 +4205,8 @@ MonoBehaviour:
   middleLaneZ: -39.5
   rightLaneZ: -55
   spawnOffsetX: -20
-  runLoop: {fileID: 0}
-  tauntSound: {fileID: 0}
+  tauntSound: {fileID: 8300000, guid: f257f5fef6057e946ab7c013725ce2ac, type: 3}
+  tauntSoundId: 
   stopChasing: 0
 --- !u!143 &1973492305
 CharacterController:
@@ -4493,3 +4563,4 @@ SceneRoots:
   - {fileID: 294076963}
   - {fileID: 1556454828}
   - {fileID: 1786108403}
+  - {fileID: 1261815680}

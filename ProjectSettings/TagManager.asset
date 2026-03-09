@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-<<<<<<< HEAD
   tags: []
-=======
-  tags:
-  - Ground
-  - Coin
-  - Toy
-  - Enemy
->>>>>>> origin/Level-1
   layers:
   - Default
   - TransparentFX
@@ -32,29 +24,22 @@ TagManager:
   - 
   - 
   - 
-  - L4Interactable
-  - L4Collectable
-  - PuzzleColliders
-  - L4FlameCollider
   - 
   - 
   - 
   - 
   - 
   - 
-  - CAR
-  - Delivery
-  - Wheels
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
