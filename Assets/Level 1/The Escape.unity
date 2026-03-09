@@ -2767,7 +2767,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 952426121}
   enemy: {fileID: 1973492304}
   playerHealth: {fileID: 952426115}
-  safeDistance: 500
+  safeDistance: 300
   distanceMultiplier: 0.1
   robotPrefab: {fileID: 315774946382549075, guid: 8b6ed2aff4130d5478eca3fb3a468e50, type: 3}
   portalPrefab: {fileID: 3451242158564458464, guid: 073135694dceaaf4bb65d2fda469cd9c, type: 3}
@@ -2789,7 +2789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneManagerScript
   portal: {fileID: 7753926328967054357, guid: 073135694dceaaf4bb65d2fda469cd9c, type: 3}
   currentLevel: The Escape
-  nextScene: The Hunt
+  nextScene: test
 --- !u!1 &1570729501
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,7 +33,7 @@ public AudioClip Background;
         gameOver = false;
         Time.timeScale = 1f;
         AudioManager.Instance.StopAllAudio();
-        AudioManager.Instance.PlayLoopingSound("BackgroundID",Background,1);
+        AudioManager.Instance.PlayLoopingSound("BackgroundID",Background,0.6f);
         if (gameOverPanel)
             gameOverPanel.SetActive(false);
     }
