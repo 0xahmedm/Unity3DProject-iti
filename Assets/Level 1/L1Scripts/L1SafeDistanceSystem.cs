@@ -63,7 +63,10 @@ public class L1SafeDistanceSystem : MonoBehaviour
             playerAnimator.SetTrigger("Idle");
 
         yield return new WaitForSeconds(WaitingTime);
-
+        PlayerPrefs.DeleteKey("CheckpointX");
+        PlayerPrefs.DeleteKey("Coins");
+        PlayerPrefs.DeleteKey("Toys");
+        PlayerPrefs.Save();
         if (movement != null)
             movement.stopMoving = false;
     }
