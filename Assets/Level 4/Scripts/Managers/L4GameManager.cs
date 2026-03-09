@@ -37,7 +37,8 @@ public class L4GameManager : MonoBehaviour
             Debug.Log("All puzzles completed! You win!");
             Robot.SetActive(true);
             Portal.SetActive(true);
-
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             // Trigger end-game logic here
             if (winSound != null)
             {
