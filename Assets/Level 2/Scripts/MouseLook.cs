@@ -1,26 +1,71 @@
 using UnityEngine;
 
+/// <summary>
+/// FPS-style mouse look. Rotates the Player body on Y-axis
+/// and a CameraLookTarget on X-axis with configurable clamping.
+/// Both FPS and TPS Cinemachine cameras should follow/look-at
+/// the CameraLookTarget so they respect the same look direction.
+/// Attach to the Player GameObject.
+/// </summary>
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 200f;
-    public Transform playerBody;
+    [Header("Look Settings")]
+    [SerializeField] private float sensitivity = 2f;
+    [SerializeField] private float upperLookLimit = 80f;
+    [SerializeField] private float lowerLookLimit = 80f;
 
-    float xRotation = 0f;
+    [Header("References")]
+    [Tooltip("Empty child at head height. Cinemachine cameras Follow/LookAt this.")]
+    [SerializeField] private Transform cameraLookTarget;
 
-    void Start()
+    private float verticalRotation;
+
+    private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        LockCursor();
     }
 
-    void Update()
+    private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        HandleHorizontalLook();
+        HandleVerticalLook();
+    }
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+    /// <summary>
+    /// Rotates the player body left/right on the Y-axis.
+    /// </summary>
+    private void HandleHorizontalLook()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        transform.Rotate(Vector3.up * mouseX);
+    }
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+    /// <summary>
+    /// Tilts the CameraLookTarget up/down on the X-axis,
+    /// clamped between the configured limits.
+    /// </summary>
+    private void HandleVerticalLook()
+    {
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(
+            verticalRotation,
+            -upperLookLimit,
+            lowerLookLimit
+        );
+
+        cameraLookTarget.localRotation = Quaternion.Euler(
+            verticalRotation, 0f, 0f
+        );
+    }
+
+    /// <summary>
+    /// Locks and hides the cursor for FPS gameplay.
+    /// </summary>
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
