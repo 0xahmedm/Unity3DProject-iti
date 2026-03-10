@@ -44,15 +44,6 @@ public class L1Score : MonoBehaviour
         toys = PlayerPrefs.GetInt("Toys", 0);
     }
 
-    public void ResetSave()
-    {
-        coins = 0;
-        toys = 0;
-        PlayerPrefs.DeleteKey("Coins");
-        PlayerPrefs.DeleteKey("Toys");
-        UpdateUI();
-    }
-
     void UpdateUI()
     {
         if (coinText)

@@ -2084,7 +2084,7 @@ MonoBehaviour:
   portalPrefab: {fileID: 3451242158564458464, guid: 073135694dceaaf4bb65d2fda469cd9c, type: 3}
   Win: {fileID: 8300000, guid: e6a5ad0105761ef4da3dc4e5c4d4758a, type: 3}
   robotOffset: {x: 25, y: 0, z: -22}
-  portalOffset: {x: 35, y: 4, z: -39.5}
+  portalOffset: {x: 35, y: 3.73, z: -39.5}
   WaitingTime: 6
 --- !u!114 &1556454836
 MonoBehaviour:
@@ -3260,6 +3260,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1274050929}
     m_Modifications:
+    - target: {fileID: 112671024361468703, guid: 0bee34f084f172b4aab77d6278a264e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1556454833}
+    - target: {fileID: 112671024361468703, guid: 0bee34f084f172b4aab77d6278a264e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 112671024361468703, guid: 0bee34f084f172b4aab77d6278a264e9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: L1GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1986517083546250633, guid: 0bee34f084f172b4aab77d6278a264e9, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
