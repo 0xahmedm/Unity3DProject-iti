@@ -9,7 +9,7 @@ public class L1SafeDistanceSystem : MonoBehaviour
     public Animator playerAnimator;
     public L1EnemyChase enemy;
     public L1PlayerHealth playerHealth;
-
+    private L1Score score;
     [Header("Distance")]
     public float safeDistance = 500f;
     public float distanceMultiplier = 0.1f;
@@ -64,8 +64,7 @@ public class L1SafeDistanceSystem : MonoBehaviour
 
         yield return new WaitForSeconds(WaitingTime);
         PlayerPrefs.DeleteKey("CheckpointX");
-        PlayerPrefs.DeleteKey("Coins");
-        PlayerPrefs.DeleteKey("Toys");
+        score.ResetSave();
         PlayerPrefs.Save();
         if (movement != null)
             movement.stopMoving = false;
