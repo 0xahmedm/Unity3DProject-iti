@@ -61,11 +61,12 @@ public class L1SafeDistanceSystem : MonoBehaviour
 
         if (playerAnimator != null)
             playerAnimator.SetTrigger("Idle");
-        PlayerPrefs.DeleteKey("CheckpointX");
+
         PlayerPrefs.DeleteKey("Coins");
+        PlayerPrefs.DeleteKey("CheckpointX");
         PlayerPrefs.DeleteKey("Toys");
-        yield return new WaitForSeconds(WaitingTime);
         PlayerPrefs.Save();
+        yield return new WaitForSeconds(WaitingTime);
         if (movement != null)
             movement.stopMoving = false;
     }

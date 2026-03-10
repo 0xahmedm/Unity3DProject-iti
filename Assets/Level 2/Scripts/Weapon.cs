@@ -37,7 +37,7 @@ public class Weapon : MonoBehaviour
     public bool IsReloading => isReloading;
     public int SavedMagazineAmmo => savedMagazineAmmo;
     public int SavedReserveAmmo => savedReserveAmmo;
-
+    public AudioClip weapon;
     private void Awake()
     {
         ammoManager = GetComponentInParent<AmmoManager>();
@@ -82,6 +82,7 @@ public class Weapon : MonoBehaviour
             Debug.Log("bullet fired yaaaaaay");
             nextFireTime = Time.time + 1f / weaponData.fireRate;
             Shoot();
+
         }
     }
 
@@ -100,7 +101,7 @@ public class Weapon : MonoBehaviour
             TryReload();
             return;
         }
-
+            AudioManager.Instance.PlaySound(weapon);
         PlayMuzzleFlash();
         PerformRaycast();
         SaveAmmoState();

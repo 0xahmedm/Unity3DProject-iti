@@ -524,9 +524,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f87d81429e1452140a85d76f33a84d1c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1772599313601467727}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f87d81429e1452140a85d76f33a84d1c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -2552453600311094711}
   m_SourcePrefab: {fileID: 100100000, guid: f87d81429e1452140a85d76f33a84d1c, type: 3}
 --- !u!1 &1360944714213403397 stripped
 GameObject:
@@ -612,27 +609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 300
---- !u!114 &-2552453600311094711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360944714213403397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5da0aeb20b15bf46a1720817c918114, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimator
-  animator: {fileID: 5713080533398793157}
-  speedDampTime: 0.1
 --- !u!4 &1848970284016791999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f87d81429e1452140a85d76f33a84d1c, type: 3}
-  m_PrefabInstance: {fileID: 2171409915140085332}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5713080533398793157 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: f87d81429e1452140a85d76f33a84d1c, type: 3}
   m_PrefabInstance: {fileID: 2171409915140085332}
   m_PrefabAsset: {fileID: 0}
