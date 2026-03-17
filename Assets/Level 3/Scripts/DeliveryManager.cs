@@ -19,9 +19,11 @@ public class DeliveryManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreUI;
 
     [Header("Marker")]
-    [SerializeField] private FaceTarget marker; 
+    [SerializeField] private FaceTarget marker;
     [SerializeField] private Transform baseTransform;
 
+    [Header("Inventory")]
+    [SerializeField] private GameObject winWindow;
 
 
 
@@ -59,13 +61,13 @@ public class DeliveryManager : MonoBehaviour
     {
         if (activeOrders.Count >= maxActiveOrders) return;
 
-        
+
         List<AreaCheck> available = customerZones.FindAll(z => !activeOrders.ContainsKey(z.orderID));
         if (available.Count == 0) return;
 
         AreaCheck target = available[Random.Range(0, available.Count)];
         activeOrders[target.orderID] = orderTimeLimit;
-        
+
         target.SetMeshRenderer(true);
 
         marker.target = target.transform;
@@ -96,9 +98,11 @@ public class DeliveryManager : MonoBehaviour
     private void UpdateScore(int amount)
     {
         score += amount;
-        if (score <= 1000)
+        if (score >= 400)
         {
             OnWin?.Invoke();
+            winWindow.SetActive(true);
+            Time.timeScale = 0f;
             Debug.Log("You win!");
         }
         UpdateUI();
